@@ -22,7 +22,10 @@ body {
   letter-spacing: .02em;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 img {
   display: block;
@@ -42,7 +45,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(221,221,218,.9);
+  background: rgba(221,221,218,.94);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(20,20,20,.08);
 }
@@ -71,6 +74,7 @@ img {
   place-items: center;
   font-size: 12px;
   font-weight: 900;
+  flex: 0 0 auto;
 }
 
 .brand small {
@@ -89,9 +93,14 @@ img {
   letter-spacing: .12em;
 }
 
-.links a { opacity: .72; }
+.links a {
+  opacity: .72;
+}
+
 .links a:hover,
-.links a.active { opacity: 1; }
+.links a.active {
+  opacity: 1;
+}
 
 .pill {
   border: 1px solid rgba(20,20,20,.16);
@@ -99,6 +108,7 @@ img {
   border-radius: 999px;
   font-size: 10px;
   letter-spacing: .1em;
+  white-space: nowrap;
 }
 
 /* ------------------------------
@@ -122,14 +132,13 @@ img {
 }
 
 /* ------------------------------
-   TOP HERO
+   HERO
 ------------------------------ */
 
 .hero-grid,
 .simple-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
   background: var(--paper);
   border: 1px solid rgba(20,20,20,.12);
   border-radius: 24px;
@@ -301,8 +310,7 @@ img {
   transition: .25s ease;
 }
 
-/* ここが今回の重要修正
-   assets内の横長画像をカード枠いっぱいに表示 */
+/* 横長画像をカードにぴったり */
 .thumb {
   aspect-ratio: 1586 / 992;
   overflow: hidden;
@@ -311,24 +319,17 @@ img {
   border-bottom: 1px solid rgba(20,20,20,.08);
 }
 
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* poster-thumbが付いていても同じ挙動 */
-.poster-thumb {
-  aspect-ratio: 1586 / 992;
-  overflow: hidden;
-}
-
+.thumb img,
 .poster-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.poster-thumb {
+  aspect-ratio: 1586 / 992;
+  overflow: hidden;
 }
 
 .meta,
@@ -393,7 +394,7 @@ img {
 }
 
 /* ------------------------------
-   KAMEDA PAGE
+   KAMEDA
 ------------------------------ */
 
 .page-title {
@@ -454,7 +455,6 @@ img {
   padding: 16px;
 }
 
-/* 関連研究の画像も同一比率 */
 .mini-card img {
   width: 100%;
   aspect-ratio: 1586 / 992;
@@ -535,7 +535,7 @@ img {
 }
 
 /* ------------------------------
-   RESPONSIVE
+   TABLET
 ------------------------------ */
 
 @media (max-width: 980px) {
@@ -565,56 +565,10 @@ img {
   }
 }
 
-@media (max-width: 640px) {
-  .wrap {
-    width: min(100% - 24px, 1220px);
-  }
+/* ------------------------------
+   SMARTPHONE
+------------------------------ */
 
-  .nav {
-    min-height: 62px;
-  }
-
-  .hero-copy,
-  .simple-hero .copy {
-    padding: 28px 22px 30px;
-  }
-
-  .hero-title,
-  .page-title,
-  .simple-hero h1 {
-    font-size: 40px;
-  }
-
-  .meta h3,
-  .un-card h3 {
-    font-size: 24px;
-  }
-
-  .section-head {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .slot {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-
-  .hero-visual,
-  .simple-hero .visual {
-    padding: 12px;
-  }
-
-  .about-box {
-    padding: 28px;
-  }
-}
-
-/* ===== Enhanced smartphone layout ===== */
 @media (max-width: 640px) {
   .wrap {
     width: calc(100% - 24px);
@@ -694,27 +648,51 @@ img {
     font-size: 11px;
   }
 
-  .hero-visual,
-  .simple-hero .visual {
+  /* ここを修正：画像と主任補カードを完全に分離 */
+  .hero-visual {
+    display: block;
     padding: 10px;
   }
 
-  .hero-visual img,
-  .simple-hero .visual img {
+  .hero-visual img {
+    width: 100%;
+    height: auto;
     border-radius: 12px;
   }
 
   .hero-card {
     position: static;
-    margin-top: 10px;
-    width: 100%;
+    width: calc(100% - 16px);
     min-width: 0;
+    margin: 10px auto 0;
+    box-sizing: border-box;
     padding: 12px 14px;
     border-radius: 12px;
   }
 
+  .hero-card .mini {
+    font-size: 9px;
+  }
+
   .hero-card strong {
     font-size: 18px;
+  }
+
+  .hero-card .note,
+  .hero-card .note {
+    font-size: 12px;
+  }
+
+  /* KAMEDAページの画像もスマホで自然に */
+  .simple-hero .visual {
+    display: block;
+    padding: 10px;
+  }
+
+  .simple-hero .visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
   }
 
   .section-head {
