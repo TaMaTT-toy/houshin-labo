@@ -6,300 +6,51 @@
   <meta name="description" content="放心ラボ — 日常の違和感を、真面目に研究する架空の企画研究所。">
   <title>放心ラボ | HOUSHIN LAB</title>
   <style>
-    :root{
-      --bg:#d9d9d7;
-      --paper:#f4f4f1;
-      --white:#ffffff;
-      --ink:#111111;
-      --muted:#686868;
-      --line:#b8b8b5;
-      --dark:#171717;
-      --radius:20px;
-      --shadow:0 18px 55px rgba(0,0,0,.12);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:var(--bg);
-      font-family:Inter, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      letter-spacing:.02em;
-    }
-    a{color:inherit;text-decoration:none}
-    img{display:block;width:100%}
-    .wrap{width:min(1180px, calc(100% - 40px));margin:auto}
-    .topbar{
-      position:sticky;top:0;z-index:30;
-      backdrop-filter:blur(18px);
-      background:rgba(217,217,215,.88);
-      border-bottom:1px solid rgba(17,17,17,.14);
-    }
-    .nav{
-      height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px
-    }
-    .brand{
-      display:flex;align-items:center;gap:14px;font-weight:800;white-space:nowrap
-    }
-    .mark{
-      width:36px;height:36px;border:2px solid var(--ink);border-radius:50%;
-      display:grid;place-items:center;font-size:12px;font-weight:900
-    }
-    .brand small{display:block;font-size:10px;letter-spacing:.18em;color:var(--muted);margin-top:3px}
-    .links{display:flex;gap:28px;font-size:12px;font-weight:700;letter-spacing:.12em}
-    .links a{opacity:.72}.links a:hover{opacity:1}
-    .hero{padding:72px 0 44px}
-    .hero-grid{
-      display:grid;grid-template-columns:1.12fr .88fr;min-height:600px;
-      border:1px solid rgba(17,17,17,.22);border-radius:28px;overflow:hidden;background:var(--paper)
-    }
-    .hero-copy{
-      padding:72px 64px;display:flex;flex-direction:column;justify-content:space-between
-    }
-    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
-    h1{
-      margin:22px 0 24px;font-size:clamp(54px,7vw,104px);
-      line-height:.95;letter-spacing:-.065em;font-weight:850
-    }
-    .hero-copy p{max-width:560px;font-size:17px;line-height:2;color:#343434}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:15px 22px;border-radius:999px;border:1px solid var(--ink);
-      font-size:12px;font-weight:800;letter-spacing:.1em;transition:.2s ease
-    }
-    .btn.dark{background:var(--ink);color:white}
-    .btn:hover{transform:translateY(-2px)}
-    .hero-art{
-      min-height:460px;position:relative;background:#202020;overflow:hidden
-    }
-    .hero-art img{
-      width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04) brightness(.72);
-      transform:scale(1.04)
-    }
-    .hero-art::after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.62))
-    }
-    .hero-label{
-      position:absolute;z-index:2;bottom:34px;left:34px;right:34px;color:white;
-      display:flex;align-items:flex-end;justify-content:space-between;gap:18px
-    }
-    .hero-label b{font-size:22px}.hero-label span{font-size:11px;opacity:.72;letter-spacing:.12em}
-    .section{padding:58px 0}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:26px}
-    .section-head h2{margin:0;font-size:38px;letter-spacing:-.04em}
-    .section-head p{margin:0;color:var(--muted);font-size:13px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:var(--paper);border:1px solid rgba(17,17,17,.16);border-radius:var(--radius);
-      overflow:hidden;transition:.25s ease;position:relative
-    }
-    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .thumb{aspect-ratio:4/3;overflow:hidden;background:#cfcfcd}
-    .thumb img{height:100%;object-fit:cover;transition:.35s ease}
-    .card:hover .thumb img{transform:scale(1.025)}
-    .meta{padding:20px 20px 22px}
-    .meta-top{display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:10px;letter-spacing:.12em}
-    .meta h3{font-size:21px;margin:10px 0 8px;letter-spacing:-.025em}
-    .meta p{margin:0;color:#565656;line-height:1.7;font-size:13px}
-    .manifesto{
-      margin-top:24px;background:var(--dark);color:white;border-radius:28px;
-      padding:68px;display:grid;grid-template-columns:.75fr 1.25fr;gap:70px
-    }
-    .manifesto .eyebrow{color:#9b9b9b}
-    .manifesto h2{font-size:42px;margin:18px 0 0;letter-spacing:-.04em}
-    .manifesto p{margin:0;font-size:18px;line-height:2;color:#d7d7d7}
-    .news{
-      display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(17,17,17,.25)
-    }
-    .news-row{
-      padding:20px 4px;border-bottom:1px solid rgba(17,17,17,.25);
-      display:grid;grid-template-columns:110px 1fr;gap:18px;font-size:13px
-    }
-    .news-row time{color:var(--muted);font-variant-numeric:tabular-nums}
-    footer{padding:64px 0 46px}
-    .footer{
-      border-top:1px solid rgba(17,17,17,.28);padding-top:28px;
-      display:flex;justify-content:space-between;gap:30px;color:#444;font-size:11px
-    }
-    .tag{
-      display:inline-block;border:1px solid rgba(17,17,17,.28);border-radius:999px;
-      padding:7px 10px;font-size:10px;letter-spacing:.1em
-    }
-    @media(max-width:900px){
-      .links{display:none}
-      .hero-grid{grid-template-columns:1fr}
-      .hero-copy{padding:52px 30px}
-      .hero-art{min-height:390px}
-      .grid{grid-template-columns:1fr 1fr}
-      .manifesto{grid-template-columns:1fr;padding:44px 30px;gap:26px}
-      .news{grid-template-columns:1fr}
-    }
-    @media(max-width:600px){
-      .wrap{width:min(100% - 24px,1180px)}
-      .nav{height:64px}
-      .hero{padding:22px 0 28px}
-      .hero-grid{border-radius:20px}
-      h1{font-size:58px}
-      .hero-copy p{font-size:15px}
-      .grid{grid-template-columns:1fr}
-      .section{padding:38px 0}
-      .section-head{align-items:flex-start;flex-direction:column;gap:8px}
-      .manifesto h2{font-size:34px}
-      .footer{flex-direction:column}
-    }
+    :root{--bg:#ececea;--paper:#f8f8f5;--white:#fff;--ink:#111;--muted:#6d6d69;--line:#cfcfca;--dark:#171717;--radius:18px;--shadow:0 18px 55px rgba(0,0,0,.10)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;letter-spacing:.02em} a{color:inherit;text-decoration:none} img{display:block;width:100%}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:30;backdrop-filter:blur(18px);background:rgba(236,236,234,.9);border-bottom:1px solid rgba(17,17,17,.12)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:13px;font-weight:800;white-space:nowrap}.mark{width:36px;height:36px;border:2px solid var(--ink);display:grid;place-items:center;font-size:12px;font-weight:900}.brand small{display:block;font-size:9px;letter-spacing:.2em;color:var(--muted);margin-top:3px}.links{display:flex;gap:24px;font-size:11px;font-weight:800;letter-spacing:.1em}.links a{opacity:.68}.links a:hover{opacity:1}.tag{border:1px solid rgba(17,17,17,.25);padding:7px 10px;font-size:9px;letter-spacing:.12em}
+    .hero{padding:34px 0 32px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:610px;background:var(--paper);border:1px solid rgba(17,17,17,.16);overflow:hidden}.hero-copy{padding:68px 58px;display:flex;flex-direction:column;justify-content:space-between}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}.hero-kicker{font-size:13px;margin-top:26px;color:#333}.hero h1{font-size:clamp(52px,6vw,88px);line-height:1.05;letter-spacing:-.055em;margin:22px 0 24px}.hero p{max-width:580px;font-size:15px;line-height:2;color:#3c3c39}.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border:1px solid var(--ink);font-size:11px;font-weight:800;letter-spacing:.08em;transition:.2s}.btn.dark{background:var(--ink);color:#fff}.btn:hover{transform:translateY(-2px)}
+    .hero-art{position:relative;min-height:500px;background:#ddd}.hero-art img{height:100%;object-fit:cover;object-position:center;filter:saturate(.78) contrast(.98)}.hero-badge{position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.9);padding:13px 15px;border:1px solid rgba(17,17,17,.15);font-size:11px;line-height:1.7}.hero-badge strong{font-size:15px}
+    .section{padding:58px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:26px}.section-head h2{font-size:38px;margin:5px 0 0;letter-spacing:-.04em}.section-head p{margin:0;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.card{background:var(--paper);border:1px solid rgba(17,17,17,.14);overflow:hidden;transition:.22s;position:relative}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.thumb{aspect-ratio:16/10;overflow:hidden;background:#d4d4d0}.thumb img{height:100%;object-fit:cover;transition:.35s}.card:hover .thumb img{transform:scale(1.02)}.meta{padding:22px 22px 24px}.meta-top{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:9px;letter-spacing:.14em}.meta h3{font-size:22px;margin:11px 0 9px;letter-spacing:-.025em}.meta p{font-size:13px;line-height:1.8;color:#565651;margin:0}.manifesto{margin-top:30px;background:var(--dark);color:#fff;padding:64px;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.manifesto .eyebrow{color:#aaa}.manifesto h2{font-size:40px;letter-spacing:-.04em;margin:16px 0 0}.manifesto p{font-size:17px;line-height:2;color:#d6d6d2;margin:0}.news{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(17,17,17,.22)}.news-row{padding:20px 4px;border-bottom:1px solid rgba(17,17,17,.22);display:grid;grid-template-columns:108px 1fr;gap:16px;font-size:12px}.news-row time{color:var(--muted)}footer{padding:56px 0 44px}.footer{border-top:1px solid rgba(17,17,17,.26);padding-top:26px;display:flex;justify-content:space-between;gap:28px;color:#444;font-size:10px}
+    @media(max-width:900px){.links{display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:48px 30px}.hero-art{min-height:480px}.grid{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr;padding:42px 30px;gap:24px}.news{grid-template-columns:1fr}}
+    @media(max-width:600px){.wrap{width:min(100% - 24px,1180px)}.nav{height:64px}.tag{display:none}.hero{padding-top:18px}.hero h1{font-size:50px}.section{padding:38px 0}.section-head{align-items:flex-start;flex-direction:column;gap:8px}.manifesto h2{font-size:32px}.footer{flex-direction:column}.hero-art{min-height:390px}}
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#">
-        <span class="mark">HL</span>
-        <span>放心ラボ<small>HOUSHIN LAB</small></span>
-      </a>
-      <nav class="links" aria-label="メインナビゲーション">
-        <a href="#works">WORKS</a>
-        <a href="#about">ABOUT</a>
-        <a href="#news">NEWS</a>
-      </nav>
-      <span class="tag">PERSONAL LAB / 2026</span>
-    </div>
-  </header>
+<header class="topbar"><div class="wrap nav">
+  <a class="brand" href="index.html"><span class="mark">HL</span><span>放心ラボ<small>HOUSHIN LAB</small></span></a>
+  <nav class="links"><a href="#works">WORKS</a><a href="kameda.html">KAMEDA</a><a href="unadopted.html">UNADOPTED</a><a href="#about">ABOUT</a><a href="#news">NEWS</a></nav>
+  <span class="tag">PERSONAL LAB / 2026</span>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div class="hero-copy"><div>
+    <div class="eyebrow">Message from Kameda / Assistant Chief</div>
+    <div class="hero-kicker">亀田主任補より、ごあいさつです。</div>
+    <h1>ようこそ、<br>放心ラボへ。</h1>
+    <p>放心ラボは、役に立つのか立たないのか、よくわからないものを本気で考え、つくり、発表する研究所です。日常の中にある小さな違和感を拾い上げ、必要以上に真面目に形にしています。今日も、くだらない可能性を信じて。</p>
+    <div class="hero-actions"><a class="btn dark" href="#works">研究成果を見る</a><a class="btn" href="kameda.html">亀田主任補について</a></div>
+  </div><div class="eyebrow">Think seriously about unnecessary things.</div></div>
+  <div class="hero-art"><img src="assets/kameda-profile.png" alt="亀田主任補"><div class="hero-badge"><span>HOUSHIN LAB STAFF</span><br><strong>亀田 主任補</strong><br>法人営業部</div></div>
+</div></section>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div>
-            <div class="eyebrow">Experimental product & capsule toy archive</div>
-            <h1>放心<br>ラボ。</h1>
-            <p>
-              日常にある違和感を、必要以上に真面目に研究する個人ラボ。
-              ありそうでないガチャ、役に立たない商品、説明しづらい思いつきを、
-              ちゃんと形にして展示します。
-            </p>
-            <div class="hero-actions">
-              <a class="btn dark" href="#works">作品を見る</a>
-              <a class="btn" href="#about">ラボについて</a>
-            </div>
-          </div>
-          <div class="eyebrow">Think seriously about unnecessary things.</div>
-        </div>
-        <div class="hero-art">
-          <img src="assets/maiko.png" alt="放心ラボの作品イメージ">
-          <div class="hero-label">
-            <div><span>FEATURED STUDY 001</span><br><b>舞妓 × 筋トレ</b></div>
-            <span>CONCEPT / FIGURE / CAPSULE TOY</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="works">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Selected studies</div>
-            <h2>研究成果</h2>
-          </div>
-          <p>まじめな画面に、だいぶ変な中身。</p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <div class="thumb"><img src="assets/maiko.png" alt="舞妓と筋トレ"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 001</span><span>CAPSULE TOY</span></div>
-              <h3>舞妓、今日も鍛えてます。</h3>
-              <p>伝統美と筋トレの不自然な共存。アームカール、ベンチプレス、加重チンニングなど。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="assets/monsters.png" alt="西洋怪物シリーズ"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 002</span><span>MONSTER LIFE</span></div>
-              <h3>西洋怪物たちの日常</h3>
-              <p>サイクロプスの視力検査、死神の草刈り、ミイラの荷造り。能力の使い道が妙に生活的。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="assets/kameda.png" alt="亀田主任補の休日"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 003</span><span>CHARACTER IP</span></div>
-              <h3>亀田主任補の休日</h3>
-              <p>休みの日にも何かを背負う。ゴルフ、家事、住宅ローン、月曜日まで甲羅の代わりに。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="assets/resignation.png" alt="一身上の都合により"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 004</span><span>DIORAMA</span></div>
-              <h3>一身上の都合により。</h3>
-              <p>蝶番がドアに、ユーラシア大陸が地球に。支えてきた側から突然の退職願。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="assets/composers.png" alt="作曲家たちの意外な趣味"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 005</span><span>OFF TIME</span></div>
-              <h3>作曲家たちの意外な趣味</h3>
-              <p>茶を立てるモーツァルト、望遠レンズを構えるバッハ、溶接を嗜むショパン。</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="thumb"><img src="assets/defective.png" alt="有印粗悪品"></div>
-            <div class="meta">
-              <div class="meta-top"><span>STUDY 006</span><span>PRODUCT</span></div>
-              <h3>有印粗悪品</h3>
-              <p>くらしに、ちいさな不便を。ガタつくテーブル、掴みにくいハサミ、偏ったボウル。</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="manifesto" id="about">
-          <div>
-            <div class="eyebrow">About the lab</div>
-            <h2>必要のないものを、<br>必要以上に真剣に。</h2>
-          </div>
-          <p>
-            放心ラボは、日常の中にある「なんでやねん」を研究対象にする架空の企画研究所です。
-            役に立つかどうかより、見た瞬間に少しだけ思考が止まるかどうか。
-            その一瞬のために、企画・造形・広告まで本気で考えます。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="news">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Lab notes</div>
-            <h2>研究記録</h2>
-          </div>
-          <p>更新履歴も、企業サイトっぽく。</p>
-        </div>
-        <div class="news">
-          <div class="news-row"><time>2026.08.08</time><span>放心ラボ Webサイトのプロトタイプを公開しました。</span></div>
-          <div class="news-row"><time>2026.08.07</time><span>「オフィスの人々 2」ラインナップ研究を更新。</span></div>
-          <div class="news-row"><time>2026.08.06</time><span>3Dプリントによる立体試作の研究を開始。</span></div>
-          <div class="news-row"><time>2026.08.04</time><span>新規カプセルトイ企画を複数追加。</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer">
-      <div><strong>放心ラボ / HOUSHIN LAB</strong><br>日常の違和感を、真面目に研究する。</div>
-      <div>© 2026 HOUSHIN LAB — PERSONAL CREATIVE ARCHIVE</div>
-    </div>
-  </footer>
-</body>
-</html>
+<section class="section" id="works"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Selected studies</div><h2>研究成果</h2></div><p>採用された9件の研究です。</p></div>
+  <div class="grid">
+    <article class="card"><div class="thumb"><img src="assets/kameda-weekday.png" alt="亀田主任補の平日"></div><div class="meta"><div class="meta-top"><span>STUDY 001</span><span>CHARACTER</span></div><h3>亀田主任補の平日</h3><p>弊社に勤務する亀田主任補です。皆さんと同じように、今日もさまざまなものを背負っています。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/kameda-holiday.png" alt="亀田主任補の休日"></div><div class="meta"><div class="meta-top"><span>STUDY 002</span><span>CHARACTER</span></div><h3>亀田主任補の休日</h3><p>亀田主任補のお休みを、少しだけ覗いてみましょう。どうやらオフの日も、なかなか大変そうです。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/office1.png" alt="オフィスの人々"></div><div class="meta"><div class="meta-top"><span>STUDY 003</span><span>CAPSULE TOY</span></div><h3>オフィスの人々</h3><p>真面目そうに見える人たちだって、誰にでも遊び心はあるものです。そんな人々が集まる、とあるオフィスの日常を切り取りました。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/office2.png" alt="オフィスの人々2"></div><div class="meta"><div class="meta-top"><span>STUDY 004</span><span>CAPSULE TOY</span></div><h3>オフィスの人々 2</h3><p>好評だったわけでもありませんが、シリーズ最新作が登場です。なお、特定の人物をモチーフにしたものではありません。本当に。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/monsters.png" alt="西洋怪物たちの日常"></div><div class="meta"><div class="meta-top"><span>STUDY 005</span><span>CAPSULE TOY</span></div><h3>西洋怪物たちの日常</h3><p>私たちの知っている怪物たちだって、普段は家事や仕事に追われています。そんな彼らの日常を、少しだけ覗いてみましょう。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/resignation.png" alt="一身上の都合により"></div><div class="meta"><div class="meta-top"><span>STUDY 006</span><span>DIORAMA</span></div><h3>一身上の都合により。</h3><p>誰にだって、仕事を辞めたくなることはあります。でも、さすがにあなたに辞められるのは困るかもしれません。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/maiko.png" alt="舞妓、今日も鍛えてます。"></div><div class="meta"><div class="meta-top"><span>STUDY 007</span><span>CAPSULE TOY</span></div><h3>舞妓、今日も鍛えてます。</h3><p>筋力トレーニングは、今やごく一般的な趣味として知られるようになりました。その足音は、どうやら意外な分野にまで届いているようで……？</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/defective.png" alt="有印粗悪品"></div><div class="meta"><div class="meta-top"><span>STUDY 008</span><span>PRODUCT</span></div><h3>有印粗悪品</h3><p>良質な粗悪品を取り揃えております。日々の暮らしに、ほんの少しの不便を。ぜひ一度お立ち寄りください。</p></div></article>
+    <article class="card"><div class="thumb"><img src="assets/composers.png" alt="作曲家たちの意外な趣味"></div><div class="meta"><div class="meta-top"><span>STUDY 009</span><span>CAPSULE TOY</span></div><h3>作曲家たちの意外な趣味</h3><p>類まれなる才能は、音楽だけにとどまらないのかもしれません。巨匠たちの意外な一面をご覧ください。</p></div></article>
+  </div>
+  <div class="manifesto" id="about"><div><div class="eyebrow">About the lab</div><h2>必要のないものを、<br>必要以上に真剣に。</h2></div><p>放心ラボは、日常の中にある「なんでやねん」を研究対象にする架空の企画研究所です。役に立つかどうかより、見た瞬間に少しだけ思考が止まるかどうか。その一瞬のために、企画・造形・広告まで本気で考えます。</p></div>
+</div></section>
+<section class="section" id="news"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Lab notes</div><h2>研究記録</h2></div><p>更新履歴。</p></div><div class="news"><div class="news-row"><time>2026.08.08</time><span>亀田主任補を放心ラボのメインキャラクターに採用しました。</span></div><div class="news-row"><time>2026.08.08</time><span>研究成果9件を正式掲載。</span></div><div class="news-row"><time>2026.08.08</time><span>「UNADOPTED STUDIES / 未採用研究」の準備を開始。</span></div><div class="news-row"><time>2026.08.08</time><span>Webサイト構成を更新しました。</span></div></div></div></section>
+</main>
+<footer><div class="wrap footer"><div><strong>放心ラボ / HOUSHIN LAB</strong><br>日常の違和感を、真面目に研究する。</div><div>© 2026 HOUSHIN LAB — PERSONAL CREATIVE ARCHIVE</div></div></footer>
+</body></html>
