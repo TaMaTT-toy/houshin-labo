@@ -5,19 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="未採用研究 | 放心ラボ">
   <title>未採用研究 | 放心ラボ</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260808-menu1">
 </head>
 <body>
 <header class="topbar">
   <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="mark">HL</span><span>放心ラボ<small>HOUSHIN LAB</small></span></a>
-    <nav class="links">
+    <a class="brand" href="index.html" aria-label="放心ラボ ホーム">
+      <span class="brand-logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img">
+          <circle cx="32" cy="32" r="28"></circle>
+          <path d="M25 14h14"></path>
+          <path d="M29 14v13L20 45c-1.8 3.7.8 7 5 7h14c4.2 0 6.8-3.3 5-7L35 27V14"></path>
+          <path d="M24 41c4 2 12 2 16 0"></path>
+          <circle cx="27" cy="36" r="1.8" class="logo-dot"></circle>
+          <circle cx="37" cy="38" r="1.8" class="logo-dot"></circle>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>放心ラボ</strong>
+        <small>HOUSHIN LAB</small>
+      </span>
+    </a>
+
+    <nav class="links desktop-links">
       <a href="index.html">WORKS</a>
       <a href="kameda.html">KAMEDA</a>
       <a class="active" href="unadopted.html">UNADOPTED</a>
       <a href="index.html#about">ABOUT</a>
     </nav>
-    <span class="pill">UNADOPTED STUDIES</span>
+
+    <span class="pill">PERSONAL CREATIVE LAB</span>
+
+    <details class="mobile-menu">
+      <summary aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav class="mobile-menu-panel">
+        <a href="index.html"><span>WORKS</span><small>研究成果</small></a>
+        <a href="kameda.html"><span>KAMEDA</span><small>亀田主任補</small></a>
+        <a class="active" href="unadopted.html"><span>UNADOPTED</span><small>未採用研究</small></a>
+        <a href="index.html#about"><span>ABOUT</span><small>放心ラボについて</small></a>
+      </nav>
+    </details>
   </div>
 </header>
 
