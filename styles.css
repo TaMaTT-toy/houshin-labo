@@ -613,3 +613,247 @@ img {
     padding: 28px;
   }
 }
+
+/* ===== Enhanced smartphone layout ===== */
+@media (max-width: 640px) {
+  .wrap {
+    width: calc(100% - 24px);
+  }
+
+  .nav {
+    min-height: 58px;
+    gap: 10px;
+  }
+
+  .mark {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .brand {
+    gap: 9px;
+    font-size: 14px;
+  }
+
+  .brand small {
+    font-size: 8px;
+  }
+
+  .pill {
+    padding: 6px 8px;
+    font-size: 8px;
+  }
+
+  .section {
+    padding: 26px 0;
+  }
+
+  .hero-grid,
+  .simple-hero {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+
+  .hero-copy,
+  .simple-hero .copy {
+    padding: 24px 20px 26px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 1.03;
+    margin: 10px 0 12px;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: .13em;
+  }
+
+  .tagline {
+    margin-top: 18px;
+  }
+
+  .btns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+
+  .hero-visual,
+  .simple-hero .visual {
+    padding: 10px;
+  }
+
+  .hero-visual img,
+  .simple-hero .visual img {
+    border-radius: 12px;
+  }
+
+  .hero-card {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .hero-card strong {
+    font-size: 18px;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .section-head h2,
+  .about-title {
+    font-size: 32px;
+  }
+
+  .works-grid,
+  .un-grid {
+    gap: 16px;
+  }
+
+  .works-grid-2,
+  .un-grid,
+  .info-grid,
+  .mini-grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card,
+  .un-card {
+    border-radius: 16px;
+  }
+
+  .meta,
+  .un-card .text {
+    padding: 16px 16px 18px;
+  }
+
+  .meta-top {
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+
+  .meta h3,
+  .un-card h3 {
+    font-size: 22px;
+    margin: 8px 0 8px;
+  }
+
+  .meta p,
+  .un-card p,
+  .text-card p,
+  .sub {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .about-box {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .page-title,
+  .simple-hero h1 {
+    font-size: 38px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .info-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .info-card strong {
+    font-size: 21px;
+  }
+
+  .text-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .text-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .mini-grid {
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .mini-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .schedule {
+    gap: 0;
+  }
+
+  .slot {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .slot h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .slot p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .slot.late {
+    padding-left: 10px;
+    padding-right: 8px;
+  }
+
+  .footer {
+    padding: 30px 0 26px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 10px;
+  }
+}
