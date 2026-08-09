@@ -1239,3 +1239,392 @@ body.lightbox-open{
     font-size:24px;
   }
 }
+
+/* =========================================================
+   MAIKO RESEARCH REPORT
+   ========================================================= */
+
+.maiko-report-hero-section{
+  padding-bottom:26px;
+}
+
+.maiko-report-heading{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:36px;
+  margin-bottom:28px;
+}
+
+.maiko-report-heading h1{
+  margin:10px 0 0;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(42px,5vw,76px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.025em;
+}
+
+.maiko-profile-mini{
+  min-width:220px;
+  padding-left:22px;
+  border-left:1px solid rgba(20,20,20,.14);
+}
+
+.maiko-profile-mini span{
+  display:block;
+  margin-bottom:7px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:#878780;
+}
+
+.maiko-profile-mini strong{
+  font-size:20px;
+  letter-spacing:.03em;
+}
+
+.maiko-main-visual{
+  overflow:hidden;
+  background:#ddd;
+  border-radius:22px;
+  border:1px solid var(--line);
+}
+
+.maiko-main-visual img{
+  width:100%;
+  aspect-ratio:1586 / 992;
+  object-fit:cover;
+}
+
+.maiko-quote-section{
+  padding:86px 0 96px;
+  background:#f6f5f0;
+  border-top:1px solid rgba(20,20,20,.08);
+  border-bottom:1px solid rgba(20,20,20,.08);
+}
+
+.maiko-big-quote{
+  max-width:1180px;
+  margin:0 auto;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(42px,6vw,88px);
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.035em;
+  text-align:center;
+}
+
+.maiko-quote-credit{
+  margin:28px 0 0;
+  text-align:center;
+  color:#777771;
+  font-size:12px;
+  letter-spacing:.12em;
+}
+
+.maiko-section-heading{
+  max-width:760px;
+  margin-bottom:46px;
+}
+
+.maiko-section-heading.compact{
+  margin-bottom:28px;
+}
+
+.maiko-section-heading h2{
+  margin:10px 0 16px;
+  font-size:clamp(34px,4vw,54px);
+  letter-spacing:-.04em;
+}
+
+.maiko-section-heading p{
+  margin:0;
+  color:#5d5d57;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.maiko-timeline{
+  position:relative;
+  max-width:1040px;
+  margin-left:auto;
+}
+
+.maiko-timeline::before{
+  content:"";
+  position:absolute;
+  left:116px;
+  top:10px;
+  bottom:10px;
+  width:1px;
+  background:rgba(20,20,20,.17);
+}
+
+.timeline-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:52px;
+  padding:0 0 34px;
+}
+
+.timeline-item:last-child{
+  padding-bottom:0;
+}
+
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:111px;
+  top:9px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#aaa79f;
+  box-shadow:0 0 0 6px var(--bg);
+}
+
+.timeline-item.is-current::before{
+  background:#222;
+}
+
+.timeline-year{
+  padding-top:1px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+  letter-spacing:.04em;
+  color:#55554f;
+}
+
+.timeline-content{
+  padding-left:4px;
+}
+
+.timeline-content h3{
+  margin:0 0 7px;
+  font-size:21px;
+  letter-spacing:-.02em;
+}
+
+.timeline-content p{
+  margin:0;
+  color:#60605a;
+  font-size:13px;
+  line-height:1.85;
+}
+
+.maiko-training-section{
+  padding-top:44px;
+}
+
+.training-grid{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:22px;
+}
+
+.training-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:26px;
+}
+
+.training-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(20,20,20,.09);
+}
+
+.training-card-head span{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:#808079;
+}
+
+.training-card-head strong{
+  font-size:12px;
+  letter-spacing:.08em;
+}
+
+.weekly-split{
+  display:grid;
+  margin-top:8px;
+}
+
+.weekly-split > div{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  align-items:center;
+  min-height:58px;
+  border-bottom:1px solid rgba(20,20,20,.08);
+}
+
+.weekly-split > div:last-child{
+  border-bottom:none;
+}
+
+.weekly-split span{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+  color:#777771;
+}
+
+.weekly-split strong{
+  font-size:16px;
+}
+
+.big3-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:18px;
+  border:1px solid rgba(20,20,20,.09);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.big3-stat{
+  min-height:178px;
+  padding:24px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-right:1px solid rgba(20,20,20,.09);
+}
+
+.big3-stat:last-child{
+  border-right:none;
+}
+
+.big3-stat > span{
+  margin-bottom:13px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:#777771;
+}
+
+.big3-stat > strong{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:55px;
+  font-weight:400;
+  line-height:1;
+}
+
+.big3-stat small{
+  margin-left:4px;
+  font-family:Inter,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  font-size:15px;
+  font-weight:600;
+}
+
+.maiko-report-note{
+  margin:12px 2px 0;
+  color:#85857f;
+  font-size:10px;
+  text-align:right;
+}
+
+@media(max-width:850px){
+  .maiko-report-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .maiko-profile-mini{
+    min-width:0;
+    border-left:none;
+    padding-left:0;
+  }
+
+  .maiko-quote-section{
+    padding:60px 0 68px;
+  }
+
+  .training-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:700px){
+  .maiko-report-heading h1{
+    font-size:39px;
+  }
+
+  .maiko-main-visual{
+    border-radius:14px;
+  }
+
+  .maiko-quote-section{
+    padding:48px 0 54px;
+  }
+
+  .maiko-big-quote{
+    font-size:clamp(34px,10vw,48px);
+    text-align:left;
+  }
+
+  .maiko-quote-credit{
+    text-align:left;
+  }
+
+  .maiko-timeline{
+    margin-left:0;
+  }
+
+  .maiko-timeline::before{
+    left:17px;
+  }
+
+  .timeline-item{
+    grid-template-columns:1fr;
+    gap:8px;
+    padding-left:46px;
+    padding-bottom:30px;
+  }
+
+  .timeline-item::before{
+    left:12px;
+    top:7px;
+    box-shadow:0 0 0 5px var(--bg);
+  }
+
+  .timeline-year{
+    font-size:14px;
+    font-weight:700;
+  }
+
+  .timeline-content{
+    padding-left:0;
+  }
+
+  .timeline-content h3{
+    font-size:19px;
+  }
+
+  .training-card{
+    padding:20px 16px;
+  }
+
+  .big3-grid{
+    grid-template-columns:1fr;
+  }
+
+  .big3-stat{
+    min-height:130px;
+    border-right:none;
+    border-bottom:1px solid rgba(20,20,20,.09);
+  }
+
+  .big3-stat:last-child{
+    border-bottom:none;
+  }
+}
