@@ -1897,3 +1897,154 @@ body.lightbox-open{
     padding-bottom:44px !important;
   }
 }
+
+
+/* =========================================================
+   MAIKO REPORT / RATIO REBALANCE
+   - メインビジュアルは高さを無理に削らず、比率を調整して全体を見せる
+   - 小梅の一言セクションも縦に取りすぎないよう比率で整理
+   ========================================================= */
+
+.maiko-report-hero-section{
+  padding-top: 22px !important;
+  padding-bottom: 18px !important;
+}
+
+.maiko-report-heading{
+  margin-bottom: 16px !important;
+  gap: 22px !important;
+  align-items: end !important;
+}
+
+.maiko-report-heading h1{
+  margin: 0 !important;
+  font-size: clamp(34px, 3.4vw, 54px) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.maiko-profile-mini{
+  min-width: 180px !important;
+  padding-left: 16px !important;
+}
+
+.maiko-main-visual{
+  border-radius: 18px !important;
+  padding: 18px !important;
+  background: #f3efec !important;
+}
+
+.maiko-main-visual img{
+  width: 100% !important;
+  aspect-ratio: 16 / 9.8 !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  background: #f7f2ef !important;
+  border-radius: 14px !important;
+}
+
+/* ===== quote section ===== */
+.maiko-quote-section{
+  padding-top: 40px !important;
+  padding-bottom: 46px !important;
+}
+
+.maiko-quote-grid{
+  grid-template-columns: 0.78fr 1.22fr !important;
+  align-items: stretch !important;
+  gap: 28px !important;
+}
+
+.maiko-quote-portrait{
+  min-height: auto !important;
+}
+
+.maiko-quote-portrait img{
+  width: 100% !important;
+  aspect-ratio: 4 / 4.9 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #111 !important;
+}
+
+.maiko-quote-copy{
+  padding: 34px 36px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.maiko-quote-copy blockquote,
+.maiko-quote-copy .maiko-quote-text,
+.maiko-quote-copy .quote-main{
+  font-size: clamp(32px, 4vw, 62px) !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.04em !important;
+  margin: 0 !important;
+}
+
+.maiko-quote-copy .quote-subject,
+.maiko-quote-copy .maiko-quote-name,
+.maiko-quote-copy .quote-caption{
+  margin-top: 18px !important;
+  font-size: 15px !important;
+  color: #8b8b85 !important;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 1100px){
+  .maiko-main-visual img{
+    aspect-ratio: 16 / 10.2 !important;
+  }
+  .maiko-quote-grid{
+    grid-template-columns: 0.85fr 1.15fr !important;
+  }
+}
+
+@media (max-width: 760px){
+  .maiko-report-hero-section{
+    padding-top: 18px !important;
+    padding-bottom: 10px !important;
+  }
+  .maiko-report-heading{
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  .maiko-report-heading h1{
+    font-size: 34px !important;
+    line-height: 1.18 !important;
+  }
+  .maiko-profile-mini{
+    min-width: 0 !important;
+    padding-left: 0 !important;
+  }
+  .maiko-main-visual{
+    padding: 10px !important;
+  }
+  .maiko-main-visual img{
+    aspect-ratio: 16 / 11.2 !important;
+  }
+  .maiko-quote-section{
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+  }
+  .maiko-quote-grid{
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .maiko-quote-portrait img{
+    aspect-ratio: 4 / 4.5 !important;
+  }
+  .maiko-quote-copy{
+    padding: 22px 20px !important;
+  }
+  .maiko-quote-copy blockquote,
+  .maiko-quote-copy .maiko-quote-text,
+  .maiko-quote-copy .quote-main{
+    font-size: clamp(24px, 7vw, 42px) !important;
+    line-height: 1.4 !important;
+  }
+}
+
