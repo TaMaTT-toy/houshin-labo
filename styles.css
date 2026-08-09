@@ -1033,3 +1033,107 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   LOGO C / MICROSCOPE MARK + QUIETER TOP TUNING
+   ========================================================= */
+
+.brand-logo{
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: block;
+}
+
+.brand-logo svg{
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brand-logo .logo-dot{
+  fill: var(--ink);
+  stroke: none;
+}
+
+.brand-copy strong{
+  font-size: 15px;
+  letter-spacing: .04em;
+}
+
+.brand-copy small{
+  margin-top: 6px;
+  font-size: 9px;
+  letter-spacing: .18em;
+  color: var(--muted);
+}
+
+.hero-copy{
+  padding-top: 46px;
+  padding-bottom: 46px;
+}
+
+.hero-title{
+  font-size: clamp(38px, 4.5vw, 56px);
+  line-height: 1.06;
+  margin: 10px 0 14px;
+  letter-spacing: -.05em;
+}
+
+.lead{
+  max-width: 500px;
+  color: #4a4a4a;
+}
+
+.lead-mini{
+  color: #6b6b67;
+  margin-top: 10px;
+}
+
+.btns{
+  margin-top: 20px;
+}
+
+.btn.dark{
+  background: #121212;
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(20,20,20,.14);
+}
+
+.tagline{
+  margin-top: 18px;
+  color: #8b867e;
+}
+
+.section-head p{
+  color: #7a7a75;
+}
+
+@media (max-width: 640px){
+  .brand-logo{
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .hero-copy{
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .hero-title{
+    font-size: 34px;
+  }
+
+  .lead{
+    max-width: none;
+  }
+}
